@@ -176,10 +176,10 @@ void excluirPrimeiroElemento()
 		primeiro = NULL;
 		ultimo = NULL;
 		free(paraExcluir);
-		cout << "Somente um elemento \n";
+		cout << "Elemento excluido \n";
 		return;
 	}
-	if(primeiro != NULL); {
+	if(primeiro != NULL) {
 		  primeiro = primeiro->prox;
 		  primeiro ->ant = NULL;
 	      free(paraExcluir);
@@ -196,24 +196,19 @@ void excluirUltimoElemento()
 		cout << "Lista vazia \n";
 		return;
 	}
-	if (ultimo != NULL); {
-		ultimo = ultimo->ant;
-		ultimo->prox = NULL;
-		free(paraExcluir);
-		return;
-	}
-	if (ultimo == primeiro) {
+	if (primeiro == ultimo)
+	{
 		primeiro = NULL;
 		ultimo = NULL;
-		free(paraExcluir);
-		cout << "Somente um elemento \n";
-		return;
 	}
+	else
+	{
+		ultimo = ultimo->ant;
+		ultimo->prox = NULL;
+	}
+		free(paraExcluir);
+	
+		cout << "Elemento excluido \n";
+	
 
 }
-
-
-
-
-
-
